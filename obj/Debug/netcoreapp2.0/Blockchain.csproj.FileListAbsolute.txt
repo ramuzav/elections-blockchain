@@ -1,0 +1,10 @@
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/bin/Debug/netcoreapp2.0/Blockchain.deps.json
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/bin/Debug/netcoreapp2.0/Blockchain.runtimeconfig.json
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/bin/Debug/netcoreapp2.0/Blockchain.runtimeconfig.dev.json
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/bin/Debug/netcoreapp2.0/Blockchain.dll
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/bin/Debug/netcoreapp2.0/Blockchain.pdb
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/Debug/netcoreapp2.0/Blockchain.csproj.CoreCompileInputs.cache
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/Debug/netcoreapp2.0/Blockchain.AssemblyInfoInputs.cache
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/Debug/netcoreapp2.0/Blockchain.AssemblyInfo.cs
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/Debug/netcoreapp2.0/Blockchain.dll
+/home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/Debug/netcoreapp2.0/Blockchain.pdb
