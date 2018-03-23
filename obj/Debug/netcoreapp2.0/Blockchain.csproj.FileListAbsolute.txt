@@ -8,3 +8,14 @@
 /home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/Debug/netcoreapp2.0/Blockchain.AssemblyInfo.cs
 /home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/Debug/netcoreapp2.0/Blockchain.dll
 /home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/Debug/netcoreapp2.0/Blockchain.pdb
+C:\Work\elections-blockchain\bin\Debug\netcoreapp2.0\Blockchain.deps.json
+C:\Work\elections-blockchain\bin\Debug\netcoreapp2.0\Blockchain.runtimeconfig.json
+C:\Work\elections-blockchain\bin\Debug\netcoreapp2.0\Blockchain.runtimeconfig.dev.json
+C:\Work\elections-blockchain\bin\Debug\netcoreapp2.0\Blockchain.dll
+C:\Work\elections-blockchain\bin\Debug\netcoreapp2.0\Blockchain.pdb
+C:\Work\elections-blockchain\obj\Debug\netcoreapp2.0\Blockchain.csprojResolveAssemblyReference.cache
+C:\Work\elections-blockchain\obj\Debug\netcoreapp2.0\Blockchain.csproj.CoreCompileInputs.cache
+C:\Work\elections-blockchain\obj\Debug\netcoreapp2.0\Blockchain.AssemblyInfoInputs.cache
+C:\Work\elections-blockchain\obj\Debug\netcoreapp2.0\Blockchain.AssemblyInfo.cs
+C:\Work\elections-blockchain\obj\Debug\netcoreapp2.0\Blockchain.dll
+C:\Work\elections-blockchain\obj\Debug\netcoreapp2.0\Blockchain.pdb

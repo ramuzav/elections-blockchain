@@ -702,29 +702,32 @@
     ]
   },
   "packageFolders": {
-    "/home/ramunas/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\RamunasZavistanavici\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ramunas/Desktop/Programming/Blockchain/Blockchain/Blockchain.csproj",
+      "projectUniqueName": "C:\\Work\\elections-blockchain\\Blockchain.csproj",
       "projectName": "Blockchain",
-      "projectPath": "/home/ramunas/Desktop/Programming/Blockchain/Blockchain/Blockchain.csproj",
-      "packagesPath": "/home/ramunas/.nuget/packages/",
-      "outputPath": "/home/ramunas/Desktop/Programming/Blockchain/Blockchain/obj/",
+      "projectPath": "C:\\Work\\elections-blockchain\\Blockchain.csproj",
+      "packagesPath": "C:\\Users\\RamunasZavistanavici\\.nuget\\packages\\",
+      "outputPath": "C:\\Work\\elections-blockchain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/ramunas/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\RamunasZavistanavici\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.devbridge.com/nuget/": {},
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
@@ -742,12 +745,12 @@
         "dependencies": {
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           },
           "newtonsoft.json": {
             "target": "Package",
-            "version": "11.0.1"
+            "version": "[11.0.1, )"
           }
         },
         "imports": [

@@ -8,3 +8,9 @@ obj/Blockchain.csproj.nuget.g.props
 bin/Debug/netcoreapp2.0/Blockchain.dll
 bin/Debug/netcoreapp2.0/Blockchain.pdb
 obj/Debug/netcoreapp2.0/Blockchain.pdb
+/obj/Debug/netcoreapp2.0/Blockchain.csprojResolveAssemblyReference.cache
+/bin/Debug/netcoreapp2.0/Blockchain.runtimeconfig.dev.json
+/obj/Debug/netcoreapp2.0/Blockchain.csproj.FileListAbsolute.txt
+/obj/Debug/netcoreapp2.0/Blockchain.csproj.FileListAbsolute.txt
+/obj/project.assets.json
+/obj/project.assets.json
