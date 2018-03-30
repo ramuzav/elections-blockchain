@@ -17,5 +17,31 @@ namespace Blockchain
             String blockchainJson = JsonConvert.SerializeObject(blockchain);		
             Console.WriteLine(blockchainJson);
         }
+
+        public static Boolean IsChainValid()
+        {
+            Block currentBlock;
+            Block previousBlock;
+
+            //loop through blockchain to check hashes:
+            for (int i = 1; i < blockchain.Count; i++)
+            {
+                currentBlock = blockchain[i];
+                previousBlock = blockchain[i - 1];
+                //compare registered hash and calculated hash:
+                if (!currentBlock.hash.Equals(currentBlock.CalculateHash()))
+                {
+                    Console.WriteLine("Current Hashes not equal");
+                    return false;
+                }
+                //compare previous hash and registered previous hash
+                if (!previousBlock.hash.Equals(currentBlock.previousHash))
+                {
+                    Console.WriteLine("Previous Hashes not equal");
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
