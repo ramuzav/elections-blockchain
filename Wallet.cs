@@ -17,9 +17,9 @@ namespace Blockchain
             CspParameters param = new CspParameters(1);
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(param);
             // this hold the private key 
-            PrivateKey = rsa.ToXmlString(true);
+            PrivateKey = rsa.ToXmlStringInternal(true);
             // this hold the public key 
-            PublicKey = rsa.ToXmlString(false);
+            PublicKey = rsa.ToXmlStringInternal(false);
         }
     }
 }

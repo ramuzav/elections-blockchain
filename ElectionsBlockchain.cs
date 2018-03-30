@@ -8,26 +8,29 @@ namespace Blockchain
     {
         public static List<Block> blockchain = new List<Block>();
         public static int difficulty = 1;
+        public static Wallet walletA;
+        public static Wallet walletB;
 
         static void Main(string[] args)
         {
-            blockchain.Add(new Block("Hi im the first block", "0"));
-            Console.WriteLine("Trying to Mine block 1... ");
-            blockchain[0].MineBlock(difficulty);
+            //Create the new wallets
+            walletA = new Wallet();
+            walletB = new Wallet();
+            //Test public and private keys
+            Console.WriteLine("Private key:");
+            Console.WriteLine(StringUtil.GetStringFromKey(walletA.PrivateKey));
 
-            blockchain.Add(new Block("Yo im the second block", blockchain[blockchain.Count - 1].Hash));
-            Console.WriteLine("Trying to Mine block 2... ");
-            blockchain[1].MineBlock(difficulty);
+            Console.WriteLine("Public key:");
+            Console.WriteLine(StringUtil.GetStringFromKey(walletA.PublicKey));
+            //Create a test transaction from WalletA to walletB 
+            Transaction transaction = new Transaction(walletA.PublicKey, walletB.PublicKey, 5, null);
+            transaction.GenerateSignature(walletA.PrivateKey);
+            //Verify the signature works and verify it from the public key
+            Console.WriteLine("Is signature verified");
+            Console.WriteLine(transaction.VerifySignature());
 
-            blockchain.Add(new Block("Hey im the third block", blockchain[blockchain.Count - 1].Hash));
-            Console.WriteLine("Trying to Mine block 3... ");
-            blockchain[2].MineBlock(difficulty);
-
-            Console.WriteLine("\nBlockchain is Valid: " + IsChainValid());
-
-            String blockchainJson = JsonConvert.SerializeObject(blockchain);
-            Console.WriteLine("\nThe block chain: ");
-            Console.WriteLine(blockchainJson);
+            //String blockchainJson = JsonConvert.SerializeObject(blockchain);
+            //Console.WriteLine(blockchainJson);
         }
 
         public static Boolean IsChainValid()

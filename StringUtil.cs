@@ -36,7 +36,7 @@ namespace Blockchain
 
             // sign the hash data with private key
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-            rsa.FromXmlString(privateKey);
+            rsa.FromXmlStringInternal(privateKey);
             //  signature hold the sign data of plaintext , signed by private key
             return rsa.SignData(str, "SHA1");
         }
@@ -50,7 +50,7 @@ namespace Blockchain
             var hashdata = sha1hash.ComputeHash(str);
 
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-            rsa.FromXmlString(publicKey);
+            rsa.FromXmlStringInternal(publicKey);
 
             return rsa.VerifyHash(hashdata, "SHA1", signature);
         }
