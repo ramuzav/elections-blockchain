@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Blockchain
@@ -17,6 +18,41 @@ namespace Blockchain
                 hash.Append(hex);
             }
             return hash.ToString();
-        }	
+        }
+
+        public static String GetStringFromKey(string key)
+        {
+            var encodedBytes = Encoding.Unicode.GetBytes(key);
+            return  Convert.ToBase64String(encodedBytes);
+        }
+
+        public static byte[] SignData(string privateKey, string input)
+        {
+            // convert the string into byte array
+            byte[] str = ASCIIEncoding.Unicode.GetBytes(input);
+
+            var sha1hash = new SHA1Managed();
+            var hashdata = sha1hash.ComputeHash(str);
+
+            // sign the hash data with private key
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            rsa.FromXmlString(privateKey);
+            //  signature hold the sign data of plaintext , signed by private key
+            return rsa.SignData(str, "SHA1");
+        }
+
+        public static bool VerifyData(string publicKey, string data, byte[] signature)
+        {
+            var str = ASCIIEncoding.Unicode.GetBytes(data);
+
+            // compute the hash again, also we can pass it as a parameter
+            var sha1hash = new SHA1Managed();
+            var hashdata = sha1hash.ComputeHash(str);
+
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            rsa.FromXmlString(publicKey);
+
+            return rsa.VerifyHash(hashdata, "SHA1", signature);
+        }
     }
 }

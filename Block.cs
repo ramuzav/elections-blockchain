@@ -4,35 +4,40 @@ namespace Blockchain
 {
     public class Block
     {
-        public string hash;
-        public string previousHash;
-        private string data; //our data will be a simple message.
-        private long timeStamp; //as number of milliseconds since 1/1/1970.
-        private int nonce;
+        public string Hash { set; get; }
+        public string PreviousHash { set; get; }
+        public string Data { private set; get; }
+        public long TimeStamp { private set; get; }
+        public int Nonce { private set; get; }
 
         //Block Constructor.
         public Block(String data, String previousHash) 
         {
-            this.data = data;
-            this.previousHash = previousHash;
-            this.timeStamp = new DateTime().TimeOfDay.Ticks;
-            this.hash = CalculateHash();
+            this.Data = data;
+            this.PreviousHash = previousHash;
+            this.TimeStamp = new DateTime().TimeOfDay.Ticks;
+            this.Hash = CalculateHash();
         }
 
         public string CalculateHash()
         {
-            return StringUtil.ApplySha256(previousHash + timeStamp.ToString() + data);
+            return StringUtil.ApplySha256(
+                PreviousHash +
+                TimeStamp.ToString() +
+                Nonce.ToString() +
+                Data
+                );
         }
 
         public void MineBlock(int difficulty)
         {
             string target = new string(new char[difficulty]).Replace('\0', '0'); 
-            while (!hash.Substring(0, difficulty).equals(target))
+            while (!Hash.Substring(0, difficulty).Equals(target))
             {
-                nonce++;
-                hash = calculateHash();
+                Nonce++;
+                Hash = CalculateHash();
             }
-            System.out.println("Block Mined!!! : " + hash);
+            Console.WriteLine("Block Mined!!! : " + Hash);
         }
     }
 }

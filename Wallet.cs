@@ -4,8 +4,8 @@ namespace Blockchain
 {
     public class Wallet
     {
-        public string privateKey;
-        public string publicKey;
+        public string PrivateKey { get; set; }
+        public string PublicKey { get; set; }
 
         public Wallet()
         {
@@ -14,8 +14,12 @@ namespace Blockchain
 
         public void GenerateKeyPair()
         {
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-            RSAParameters rsaKeyInfo = rsa.ExportParameters(true);
+            CspParameters param = new CspParameters(1);
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(param);
+            // this hold the private key 
+            PrivateKey = rsa.ToXmlString(true);
+            // this hold the public key 
+            PublicKey = rsa.ToXmlString(false);
         }
     }
 }
