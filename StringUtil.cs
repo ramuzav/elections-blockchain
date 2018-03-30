@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -53,6 +54,34 @@ namespace Blockchain
             rsa.FromXmlStringInternal(publicKey);
 
             return rsa.VerifyHash(hashdata, "SHA1", signature);
+        }
+
+
+        // NOT AN ACTUAL MERKLE ROOT -- NEED TO REVIEW AND IMPLEMENT CORRECT ONE
+        public static String GetMerkleRoot(List<Transaction> transactions)
+        {
+            int count = transactions.Count;
+            var previousTreeLayer = new List<string>();
+
+            foreach (var transaction in transactions)
+            {
+                previousTreeLayer.Add(transaction.TransactionId);
+            }
+
+            var treeLayer = previousTreeLayer;
+
+            while (count > 1)
+            {
+                treeLayer = new List<string>();
+                for (int i = 1; i < previousTreeLayer.Count; i++)
+                {
+                    treeLayer.Add(ApplySha256(previousTreeLayer[i - 1] + previousTreeLayer[i]));
+                }
+                count = treeLayer.Count;
+                previousTreeLayer = treeLayer;
+            }
+
+            return treeLayer.Count == 1 ? treeLayer[0] : "";
         }
     }
 }

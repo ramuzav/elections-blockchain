@@ -6,11 +6,11 @@ namespace Blockchain
     {
         public string Id { get; set; }
         public string Reciepient { get; set; } //also known as the new owner of these coins.
-        public float Value { get; set; } //the amount of coins they own
+        public double Value { get; set; } //the amount of coins they own
         public string ParentTransactionId { get; set; } //the id of the transaction this output was created in
 
         //Constructor
-        public TransactionOutput(string reciepient, float value, String parentTransactionId)
+        public TransactionOutput(string reciepient, double value, String parentTransactionId)
         {
             Reciepient = reciepient;
             Value = value;
@@ -19,7 +19,7 @@ namespace Blockchain
         }
 
         //Check if coin belongs to you
-        public bool isMine(string publicKey)
+        public bool IsMine(string publicKey)
         {
             return (publicKey == Reciepient);
         }
